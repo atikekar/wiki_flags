@@ -11,18 +11,6 @@ This project checks the status of URLs from various sections of a document (such
 
 ---
 
-## **Table of Contents**
-
-1. **Requirements**
-2. **Setup**
-3. **Deploying as Azure Function**
-4. **Logic App Integration**
-5. **Email Configuration**
-6. **Testing the Function**
-7. **Example Usage**
-
----
-
 ## **Requirements**
 
 To run this project, you need the following:
@@ -71,56 +59,6 @@ Create a new function within your app and paste the script there.
 Use the **Test** functionality in the Azure portal to ensure the function works as expected.
 
 The function should return a list of broken URLs or a success message if all URLs are healthy.
-
----
-
-**Logic App Integration**
-
-**Create a Logic App:**
-
-Go to **Logic Apps** in the Azure portal and click **Create**.
-
-Fill in the required details and create the app.
-
-**Design the Workflow:**
-
-Open the **Logic App Designer**.
-
-Choose **Blank Logic App**.
-
-**Add Recurrence Trigger:**
-
-Add a **Recurrence Trigger** to run the Logic App on a schedule (e.g., daily or hourly).
-
-**Add HTTP Action:**
-
-Add an **HTTP Action** to call the Azure Function that you deployed.
-
-Configure the HTTP action:
-
-**Method:** POST
-
-**URI:** The URI of your deployed Azure Function
-
-**Headers:**
-
-Content-Type: `application/json`
-
-**Body:**
-
-```json
-{
-  "urls": [
-    "https://example1.com",
-    "https://example2.com"
-  ]
-}
-
-
-### Install required Python libraries:
-
-bash
-pip install requests azure-functions
 
 **Email Configuration**
 
